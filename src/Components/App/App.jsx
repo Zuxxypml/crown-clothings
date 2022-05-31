@@ -1,12 +1,15 @@
 import React, { Component } from "react";
+import { Route, Routes } from "react-router-dom";
+import Hatpage from "../../pages/Hatspage/Hatpage";
 import Homepage from "../../pages/Homepage/Homepage";
 import "./App.scss";
 class App extends Component {
   render() {
     return (
-      <div>
-        <Homepage />
-      </div>
+      <Routes>
+        <Route path="/" element={<Homepage />}></Route>
+        <Route path="/shop/hats" element={<Hatpage />}></Route>
+      </Routes>
     );
   }
 }
