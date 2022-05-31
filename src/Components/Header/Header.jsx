@@ -16,7 +16,7 @@ export default function Header() {
         <Link className="option" to="/contact">
           Contact
         </Link>
-        <Link className="option" to="/signin">
+        <Link className="option" to="/auth">
           Sign in
         </Link>
       </div>
