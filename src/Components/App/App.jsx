@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { Route, Routes } from "react-router-dom";
-import Hatpage from "../../pages/Hatspage/Hatpage";
-import Homepage from "../../pages/Homepage/Homepage";
+import Homepage from "../../pages/HomePage/Homepage";
+import ShopPage from "../../pages/ShopPage/ShopPage";
 import "./App.scss";
 class App extends Component {
   render() {
     return (
       <Routes>
         <Route path="/" element={<Homepage />}></Route>
-        <Route path="/shop/hats" element={<Hatpage />}></Route>
+        <Route path="/shop" element={<ShopPage />}></Route>
       </Routes>
     );
   }
