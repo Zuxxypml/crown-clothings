@@ -19,3 +19,24 @@
     border: 1px solid black;
   }
 }
+.google {
+  min-width: 165px;
+  width: auto;
+  height: 50px;
+  letter-spacing: 0.5px;
+  line-height: 50px;
+  padding: 0 35px 0 35px;
+  font-size: 15px;
+  background-color: darkred;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: white;
+    color: darkred;
+    border: 1px solid darkred;
+  }
+}

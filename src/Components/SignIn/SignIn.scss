@@ -2,11 +2,14 @@
     width: 30vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin-left: 100px;
 
 
     .title{
         margin: 10px 0;
+    }
+
+    .button-container{
+        display: flex;
+        gap: 15px;
     }
 }

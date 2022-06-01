@@ -1,9 +1,9 @@
 import React from "react";
 import "./CustomButton.scss";
 
-export default function CustomButton({ children, ...otherProps }) {
+export default function CustomButton({ className, children, ...otherProps }) {
   return (
-    <button className="custom-button" {...otherProps}>
+    <button className={className} {...otherProps}>
       {children}
     </button>
   );
