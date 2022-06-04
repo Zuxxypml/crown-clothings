@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
 import AuthPage from "../../pages/AuthPage/AuthPage";
 import Homepage from "../../pages/HomePage/Homepage";
 import ShopPage from "../../pages/ShopPage/ShopPage";
 import { setCurrentUser } from "../../redux/user/userActions";
 import Header from "../Header/Header";
+
 import "./App.scss";
 class App extends Component {
   unsubscribeFromAuth = null;
@@ -35,17 +36,26 @@ class App extends Component {
       <div>
         <Header />
         <Routes>
-          <Route path="/" element={<Homepage />}></Route>
-          <Route path="/shop" element={<ShopPage />}></Route>
-          <Route path="/auth" element={<AuthPage />}></Route>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/shop" element={<ShopPage />} />
+          <Route
+            exact
+            path="/auth"
+            element={
+              this.props.currentUser ? <Navigate to="/" /> : <AuthPage />
+            }
+          />
         </Routes>
       </div>
     );
   }
 }
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser,
+});
 
 const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
