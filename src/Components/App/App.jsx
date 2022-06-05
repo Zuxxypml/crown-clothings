@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Route, Routes, Navigate } from "react-router-dom";
 import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
 import AuthPage from "../../pages/AuthPage/AuthPage";
+import Checkout from "../../pages/CheckoutPage/Checkout";
 import Homepage from "../../pages/HomePage/Homepage";
 import ShopPage from "../../pages/ShopPage/ShopPage";
 import { setCurrentUser } from "../../redux/user/userActions";
@@ -36,8 +37,9 @@ class App extends Component {
       <div>
         <Header />
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          <Route exact path="/" element={<Homepage />} />
           <Route path="/shop" element={<ShopPage />} />
+          <Route exact path="/checkout" element={<Checkout />} />
           <Route
             exact
             path="/auth"
