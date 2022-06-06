@@ -1,5 +1,5 @@
 .collection-card {
-  width: 22%;
+  width: 300px;
   display: flex;
   flex-direction: column;
   height: 350px;
@@ -29,6 +29,7 @@
     justify-content: space-between;
     font-size: 18px;
     box-sizing: border-box;
+    margin-top: 10px;
 
     .name {
       width: 85%; 

@@ -38,7 +38,7 @@ class App extends Component {
         <Header />
         <Routes>
           <Route exact path="/" element={<Homepage />} />
-          <Route path="/shop" element={<ShopPage />} />
+          <Route path="/shop/*" element={<ShopPage />} />
           <Route exact path="/checkout" element={<Checkout />} />
           <Route
             exact
