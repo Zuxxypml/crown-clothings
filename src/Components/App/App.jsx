@@ -5,6 +5,7 @@ import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
 import AuthPage from "../../pages/AuthPage/AuthPage";
 import Checkout from "../../pages/CheckoutPage/Checkout";
 import Homepage from "../../pages/HomePage/Homepage";
+
 import ShopPage from "../../pages/ShopPage/ShopPage";
 import { setCurrentUser } from "../../redux/user/userActions";
 import Header from "../Header/Header";
