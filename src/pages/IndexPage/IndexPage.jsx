@@ -1,11 +1,11 @@
 import React from "react";
 import Directory from "../../Components/Directory/Directory";
-import "./Homepage.scss";
-function HomePage() {
+import "./IndexPage.scss";
+function IndexPage() {
   return (
-    <div className="homepage">
+    <div className="IndexPage">
       <Directory />
     </div>
   );
 }
-export default HomePage;
+export default IndexPage;
