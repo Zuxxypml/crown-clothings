@@ -1,10 +1,6 @@
 import React from "react";
-import "./CustomButton.scss";
+import { CustomButtonContainer } from "./CustomButton.styled";
 
-export default function CustomButton({ className, children, ...otherProps }) {
-  return (
-    <button className={className} {...otherProps}>
-      {children}
-    </button>
-  );
+export default function CustomButton({ children, ...props }) {
+  return <CustomButtonContainer {...props}>{children}</CustomButtonContainer>;
 }

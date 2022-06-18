@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Header.scss";
 import { ReactComponent as Logo } from "../../Assets/4.4 crown.svg";
 import { auth } from "../../firebase/firebase.utils";
 import { connect } from "react-redux";
@@ -8,14 +7,18 @@ import CartIcon from "../CartIcon/CartIcon";
 import CartDropdown from "../CartDropdown/CartDropdown";
 import { selectCurrentUser } from "../../redux/user/userSelector";
 import { selectHidden } from "../../redux/cart/cartSelector";
-
+import {
+  HeaderContainer,
+  LogoContainer,
+  OptionsContainer,
+} from "./Header.styled";
 function Header({ currentUser, hidden }) {
   return (
-    <div className="header">
-      <Link className="logo-container" to="/">
+    <HeaderContainer>
+      <LogoContainer to="/">
         <Logo className="logo" />
-      </Link>
-      <div className="options">
+      </LogoContainer>
+      <OptionsContainer>
         <Link className="option" to="/shop/shop">
           Shop
         </Link>
@@ -38,9 +41,9 @@ function Header({ currentUser, hidden }) {
           </Link>
         )}
         <CartIcon />
-      </div>
+      </OptionsContainer>
       {hidden ? null : <CartDropdown />}
-    </div>
+    </HeaderContainer>
   );
 }
 const mapStateToProps = (state) => ({

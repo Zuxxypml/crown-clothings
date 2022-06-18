@@ -1,11 +1,11 @@
 import React from "react";
 import Directory from "../../Components/Directory/Directory";
-import "./IndexPage.scss";
+import { IndexPageContainer } from "./IndexPage.styled";
 function IndexPage() {
   return (
-    <div className="IndexPage">
+    <IndexPageContainer>
       <Directory />
-    </div>
+    </IndexPageContainer>
   );
 }
 export default IndexPage;

@@ -64,10 +64,10 @@ class SignIn extends Component {
             label="password"
           />
           <div className="button-container">
-            <CustomButton className="custom-button" type="submit">
+            <CustomButton className="button" type="submit">
               Sign in
             </CustomButton>
-            <CustomButton className="google" onClick={signInWithGoogle}>
+            <CustomButton GoogleSignIn onClick={signInWithGoogle}>
               with Google
             </CustomButton>
           </div>
