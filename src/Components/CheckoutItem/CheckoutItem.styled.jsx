@@ -16,7 +16,7 @@ export const CheckoutItemImageContainer = styled.div`
   padding-right: 15px;
 `;
 export const CheckoutItemImage = styled.img`
-  width: 100%;
+  width: 90%;
   height: 100%;
 `;
 export const CheckoutItemName = styled.span`

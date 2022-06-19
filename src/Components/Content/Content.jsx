@@ -1,11 +1,15 @@
 import React from "react";
-import "./Content.scss";
+import {
+  ContentContainer,
+  ContentTitle,
+  ContentSubtitle,
+} from "./Content.styled";
 
 export default function Content({ title }) {
   return (
-    <div className="content">
-      <h1 className="title">{title}</h1>
-      <span className="subtitle">SHOP NOW</span>
-    </div>
+    <ContentContainer className="content">
+      <ContentTitle className="title">{title}</ContentTitle>
+      <ContentSubtitle className="subtitle">SHOP NOW</ContentSubtitle>
+    </ContentContainer>
   );
 }

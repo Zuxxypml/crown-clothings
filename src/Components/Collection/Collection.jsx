@@ -1,10 +1,15 @@
-import "./Collection.scss";
 import React from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectShopData } from "../../redux/shop/shopSelector";
 import { useParams } from "react-router-dom";
 import CollectionCard from "../CollectionCard/CollectionCard";
+import {
+  CollectionContainer,
+  CollectionItem,
+  CollectionItems,
+  CollectionTitle,
+} from "./Collection.styled";
 
 function Collection({ shopData, animate }) {
   const collections = shopData;
@@ -16,18 +21,18 @@ function Collection({ shopData, animate }) {
   console.log(gg);
   const { title, items } = gg;
   return (
-    <div className="collection-page">
-      <h1 className="title">{title}</h1>
-      <div className="items">
+    <CollectionContainer>
+      <CollectionTitle>{title}</CollectionTitle>
+      <CollectionItems>
         {items.map((item) => {
           return (
-            <div className="collection-item">
+            <CollectionItem>
               <CollectionCard key={item.id} item={item}></CollectionCard>
-            </div>
+            </CollectionItem>
           );
         })}
-      </div>
-    </div>
+      </CollectionItems>
+    </CollectionContainer>
   );
 }
 const mapStateToProps = createStructuredSelector({

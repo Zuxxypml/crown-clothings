@@ -1,17 +1,17 @@
 import React from "react";
-import "./FormInput.scss";
-
+import {
+  FormInputGroupContainer,
+  FormInputInput,
+  FormInputLabel,
+} from "./FormInput.styled";
 export default function FormInput({ label, handleChange, ...otherProps }) {
   return (
-    <div className="group">
-      <input className="form-input" onChange={handleChange} {...otherProps} />
+    <FormInputGroupContainer>
+      <FormInputInput onChange={handleChange} {...otherProps} />
       {label ? (
-        <label
-          className={`${
-            otherProps.value.length ? `shrink ` : ""
-          } form-input-label`}
-        ></label>
+        <FormInputLabel {...otherProps.value.length}></FormInputLabel>
       ) : null}
-    </div>
+    </FormInputGroupContainer>
   );
 }
+// I need to comeback to do Something here
