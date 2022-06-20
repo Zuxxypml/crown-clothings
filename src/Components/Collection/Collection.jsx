@@ -15,11 +15,11 @@ function Collection({ shopData, animate }) {
   const collections = shopData;
   let params = useParams();
   console.log(params);
-  let gg = collections.find(
+  let collectionTitle = collections.find(
     (collection) => collection.title.toLowerCase() === params.collectionId
   );
-  console.log(gg);
-  const { title, items } = gg;
+  console.log(collectionTitle);
+  const { title, items } = collectionTitle;
   return (
     <CollectionContainer>
       <CollectionTitle>{title}</CollectionTitle>
