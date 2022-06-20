@@ -26,7 +26,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 // Get a reference to the database service
-const db = getFirestore(app);
+export const db = getFirestore(app);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
@@ -58,7 +58,21 @@ const createUserProfileDocument = async (userAuth, additionalData) => {
   }
   return userSnap;
 };
-
+export const convertCollectionsSnapshotToMap = (collections) => {
+  const transformedCollection = collections.docs.map((doc) => {
+    const { title, items } = doc.data();
+    return {
+      routeName: encodeURI(title.toLowerCase()),
+      title,
+      items,
+      id: doc.id,
+    };
+  });
+  return transformedCollection.reduce((accumulator, collection) => {
+    accumulator[collection.title.toLowerCase()] = collection;
+    return accumulator;
+  }, {});
+};
 export const addCollectionAndItem = async (collectionKey, collectionArray) => {
   // const collectionRef = collection(db, collectionKey);
   const batch = writeBatch(db);
