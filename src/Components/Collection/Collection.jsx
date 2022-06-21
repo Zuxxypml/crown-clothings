@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
-import { selectShopData } from "../../redux/shop/shopSelector";
+import { selectCollection } from "../../redux/shop/shopSelector";
+
 import { useParams } from "react-router-dom";
 import CollectionCard from "../CollectionCard/CollectionCard";
 import {
@@ -11,15 +11,12 @@ import {
   CollectionTitle,
 } from "./Collection.styled";
 
-function Collection({ shopData, animate }) {
-  const collections = shopData;
+function Collection({ shopData, animate, match }) {
+  const collection = shopData;
   let params = useParams();
-  console.log(params);
-  let collectionTitle = collections.find(
-    (collection) => collection.title.toLowerCase() === params.collectionId
-  );
-  console.log(collectionTitle);
-  const { title, items } = collectionTitle;
+
+  console.log(params.collectionId);
+  const { title, items } = collection;
   return (
     <CollectionContainer>
       <CollectionTitle>{title}</CollectionTitle>
@@ -35,7 +32,11 @@ function Collection({ shopData, animate }) {
     </CollectionContainer>
   );
 }
-const mapStateToProps = createStructuredSelector({
-  shopData: selectShopData,
-});
+
+const mapStateToProps = (state, ownProps) => {
+  console.log(ownProps);
+  return {
+    shopData: selectCollection(),
+  };
+};
 export default connect(mapStateToProps)(Collection);
