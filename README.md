@@ -1,4 +1,4 @@
 ## Crown Clothing 
-### Made with React as E-commerce 
+### Made with React and Firebase, Redux 
 #### Live URL: https://zuxxy-crown-clothing-live.herokuapp.com/ 
-# Still in Development stay tuned :-)
+# No Longer Maintained :( but at it's MVP
